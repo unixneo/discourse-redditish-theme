@@ -50,6 +50,21 @@ export default {
           },
         });
       });
+
+      // NEW CODE TO MAKE THEME EDITABLE
+      api.onPageChange((url) => {
+        if (document.querySelector(".admin-content")) {
+          let messageElement = document.querySelector(".source");
+          if (messageElement) {
+            messageElement.innerHTML = "This theme is now fully editable.";
+          }
+
+          let updateElement = document.querySelector(".check-for-updates");
+          if (updateElement) {
+            updateElement.style.display = "none";
+          }
+        }
+      });
     });
   },
 };
